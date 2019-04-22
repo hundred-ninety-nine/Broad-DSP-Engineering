@@ -274,7 +274,7 @@ public class SubwayGraph extends G<Stop> {
 	 */
 	private void printPath_aux(Stop path) {
 		if (path.getPrev() != null) {
-			printPath(path.getPrev());
+			printPath_aux(path.getPrev());
 		}
 		System.out.print(" -> " + path.getName() + " "
 				+ path.getConnectsTo().stream().map(r -> r.getLong_name()).collect(Collectors.toList()).toString());
